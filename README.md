@@ -49,3 +49,60 @@ This project implements a **robust semantic search and question-answering system
 git clone <repo_url>
 cd <repo_folder>
 pip install -r requirements.txt
+```
+
+## Usage
+
+** 1.Ingest PDFs or Text **
+
+```bash
+python main.py --ingest /path/to/folder
+```
+
+
+* Supports .pdf and .txt files.
+
+* Splits text into chunks and stores them in SQLite FTS and FAISS.
+
+
+## 2. Run API Server 
+
+```bash
+python HybridSearchQnA.py
+```
+* FastAPI server runs on http://0.0.0.0:8000.
+
+## 3. Ask a Question
+
+** Endpoint:**
+```bash
+POST /ask
+```
+** Body (JSON): **
+```bash
+{
+"q": "What does ISO 10218-1 cover?",
+"k": 5,
+"mode": "cross" // options: vector | hybrid | cross
+}
+```
+## 4. Compare Retrieval Modes
+**Endpoint:**
+```bash
+POST /compare
+```
+**Body(JSON)**
+```bash
+{
+"q": "Your question here",
+"k": 5
+}
+```
+
+
+
+
+
+
+
+
