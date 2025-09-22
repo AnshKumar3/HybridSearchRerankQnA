@@ -27,6 +27,22 @@ This project implements a **robust semantic search and question-answering system
 
 ---
 
+
+**Vector-only results:**  
+- ISO 13849: General safety directives for machinery  
+- Industrial robot safety: basic design concepts  
+
+**Hybrid results:**  
+- ISO 10218-1: Safety requirements for industrial robots themselves  
+- ISO 13849: General machinery directives  
+
+**Cross-reranked results:**  
+- ISO 10218-1:2011 defines the requirements for the inherent safe design of industrial robots, protection measures, and associated information.  
+- ISO 10218-2: Safety requirements for robot systems and integration.  
+
+✅ **Observation:** Cross-reranking pushes the most relevant passages to the top, filtering out noise from general directives or related standards.
+
+
 ## Installation
 
 ```bash
